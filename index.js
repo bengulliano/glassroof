@@ -1,13 +1,13 @@
 
 const express = require('express');
 const mongoose = require('mongoose');
-const mongoURI = require('dotenv').config();
+require('dotenv').config();
 const App = express();
 const port = process.env.PORT || 3000;
 
 // MongoDB Atlas connection imported from .env file
 // Example: mongoURI = 'mongodb+srv://<username>:<password>@cluster0.abcde.mongodb.net/myapp?retryWrites=true&w=majority'
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(MongoDB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Connected to MongoDB Atlas:glasswindow'))
     .catch(err => console.error('Connection error:', err));
 
