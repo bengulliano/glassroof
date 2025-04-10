@@ -12,6 +12,8 @@ MONGODB_URI = process.env.MONGODB_URI
 App.use(cors());
 App.use(express.json());
 
+console.log(MONGODB_URI);
+
 
 // MongoDB Atlas connection imported from .env file
 // Example: mongoURI = 'mongodb+srv://<username>:<password>@cluster0.abcde.mongodb.net/myapp?retryWrites=true&w=majority'
