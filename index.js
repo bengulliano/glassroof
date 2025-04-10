@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000;
 
 // MongoDB Atlas connection imported from .env file
 // Example: mongoURI = 'mongodb+srv://<username>:<password>@cluster0.abcde.mongodb.net/myapp?retryWrites=true&w=majority'
-mongoose.connect(MongoDB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Connected to MongoDB Atlas:glasswindow'))
     .catch(err => console.error('Connection error:', err));
 
