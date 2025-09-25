@@ -39,7 +39,6 @@ process.on('SIGINT', async () => {
 run().catch(console.dir);
 
 
-
 // API Routes
 // Simple route
 App.get('/', (req, res) => {
