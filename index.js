@@ -1,13 +1,7 @@
 
-const express = require('express');
-const mongoose = require('mongoose');
 require('dotenv').config();
-const cors = require('cors');
-
-const App = express();
-// Middleware
-App.use(cors());
-App.use(express.json());
+const { App, mongoose } = require('./src/init.js');
+require('./src/api/ratingsApi.js')
 
 const port = process.env.PORT || 4000;
 MONGODB_URI = process.env.MONGODB_URI;
@@ -17,7 +11,7 @@ async function run() {
     try {
         // Create a Mongoose client with a MongoClientOptions object to set the Stable API version
         await mongoose.connect(MONGODB_URI, clientOptions)
-            .then(() => console.log('Connected to MongoDB Atlas:glassroof'))
+            .then(() => console.log('Connected to MongoDB Atlas', mongoose.connection.db.databaseName))
             .then(() => {
                 App.listen(port, () => {
                     console.log(`Server running on port ${port}`);
